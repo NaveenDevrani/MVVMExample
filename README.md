@@ -7,4 +7,18 @@ Model : This is responsible for handling the data in the application. Model cann
 View: This is the User Interface of our Application. It should not contain any application logic.  
 
 ViewModel: It is basically a link between Model and View.  
-![Optional Text](../master/lifecycle.jpg)
+![Optional Text](../master/lifecycle.jpg)  
+
+MVVM in Android
+When we want to use MVVM in Android, we use this architecture.
+
+
+One more thing is involved here and that is the Repository. So repository is responsible for handling the data. Repository may use multiple data sources according to the need, it may fetch data from a Remote Source or from the local storage.  
+
+# Advantages of using MVVM
+Now let’s talk about what are the advantages of using MVVM in your android project.
+
+If you use MVVM it will help you structuring your code in a nice way so that it is easy to understand for a new developer.
+Using MVVM makes your project maintainable as everything is well organized and making changes are very easy.
+Testability is easy with MVVM because all modules are independent and testable.
+MVVM enhances the re-usability of the code.
