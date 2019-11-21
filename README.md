@@ -12,6 +12,7 @@ ViewModel: It is basically a link between Model and View.
 MVVM in Android
 When we want to use MVVM in Android, we use this architecture.
 
+![Optional Text](../master/mvvm_architecture.jpg)  
 
 One more thing is involved here and that is the Repository. So repository is responsible for handling the data. Repository may use multiple data sources according to the need, it may fetch data from a Remote Source or from the local storage.  
 
