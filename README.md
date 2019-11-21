@@ -7,3 +7,4 @@ Model : This is responsible for handling the data in the application. Model cann
 View: This is the User Interface of our Application. It should not contain any application logic.  
 
 ViewModel: It is basically a link between Model and View.  
+![Optional Text](../master/lifecycle.jpg)
