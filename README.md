@@ -21,5 +21,5 @@ Now let’s talk about what are the advantages of using MVVM in your android pro
 
 **1)** If you use MVVM it will help you structuring your code in a nice way so that it is easy to understand for a new developer.  
 **2)** Using MVVM makes your project maintainable as everything is well organized and making changes are very easy.  
-**3)** Testability is easy with MVVM because all modules are independent and testable.
+**3)** Testability is easy with MVVM because all modules are independent and testable.  
 **4)** MVVM enhances the re-usability of the code.
