@@ -4,12 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewmodel"
             type="com.devcoder.mvvmexample.auth.AuthViewModel" />
     </data>
-
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/root_layout"
@@ -17,7 +15,6 @@
         android:layout_height="match_parent"
         android:background="#E2E2E2"
         tools:context=".ui.auth.LoginActivity">
-
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -30,7 +27,8 @@
                 android:layout_height="80dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="75dp"
-                android:background="@drawable/ic_applogo" />
+                android:background="@drawable/ic_applogo"
+                tools:ignore="ContentDescription" />
 
             <LinearLayout
                 android:id="@+id/linearLayout1"
@@ -76,7 +74,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/edit_text_round_gray_background"
-                    android:drawableLeft="@drawable/ic_email"
+                    android:drawableStart="@drawable/ic_email"
                     android:drawablePadding="16dp"
                     android:hint="belal@gmail.com"
                     android:inputType="textEmailAddress"
@@ -88,7 +86,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/edit_text_round_gray_background"
-                    android:drawableLeft="@drawable/ic_lock"
+                    android:drawableStart="@drawable/ic_lock"
                     android:drawablePadding="16dp"
                     android:hint="password"
                     android:inputType="textPassword"
@@ -123,7 +121,7 @@
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/colorPrimary" />
-<!--            android:onClick="@{viewmodel::onSignup}"-->
+            <!--            android:onClick="@{viewmodel::onSignup}"-->
 
         </RelativeLayout>
 
@@ -133,7 +131,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
             android:visibility="invisible" />
-
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

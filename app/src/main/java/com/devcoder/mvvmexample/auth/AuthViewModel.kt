@@ -3,7 +3,10 @@ package com.devcoder.mvvmexample.auth
 import android.content.Context
 import android.view.View
 import androidx.lifecycle.ViewModel
+import com.devcoder.mvvmexample.data.repositries.UserRepository
 import com.devcoder.mvvmexample.interfaces.AuthListener
+import com.devcoder.mvvmexample.utils.ApiException
+import com.devcoder.mvvmexample.utils.NoInternetException
 
 class AuthViewModel : ViewModel() {
     var email: String? = null
@@ -17,7 +20,10 @@ class AuthViewModel : ViewModel() {
             authListener?.onFailure("Invaild email or password")
             return
         }
-        authListener?.onSuccess()
+
+        val loginResponse= UserRepository().userlogin(email!!,password!!)
         // handle success
+        authListener?.onSuccess(loginResponse)
     }
+
 }
