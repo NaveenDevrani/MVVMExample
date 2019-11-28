@@ -4,7 +4,8 @@
     package="com.devcoder.mvvmexample">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,8 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ui.SignupActivity"/>
-        <activity android:name=".ui.LoginActivity">
+        <activity android:name="com.devcoder.mvvmexample2.activities.MainActivity">
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
