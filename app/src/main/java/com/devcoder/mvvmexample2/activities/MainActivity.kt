@@ -9,6 +9,7 @@ import com.devcoder.mvvmexample.R
 import com.devcoder.mvvmexample2.adapters.AndroidAdapter
 import com.devcoder.mvvmexample2.models.DataModel
 import com.devcoder.mvvmexample2.viewmodels.MyViewModel
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -33,6 +34,17 @@ class MainActivity : AppCompatActivity() {
             } else
                 hideProgressBar()
         })
+
+        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener {
+            myViewModel?.addNewItems(
+                DataModel(
+                    "Oreo",
+                    "8.0",
+                    "https://picsum.photos/200/300.webp",
+                    R.drawable.oreo
+                )
+            )
+        }
     }
 
     private fun initRecyclerView() {

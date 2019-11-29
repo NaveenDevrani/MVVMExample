@@ -17,11 +17,46 @@ class MyViewModel : ViewModel() {
     fun init() {
         if (list != null) return
         myRepositories = MyRepositories.instance
-        loadData()
+        Thread.sleep(4000)
+        list = myRepositories!!.androidList
+        isDataLoaded.postValue(true)
+//        loadData()
+    }
+    @SuppressLint("StaticFieldLeak")
+    fun loadData() {
+//        isDataLoaded.value = false
+//        Thread.sleep(4000)
+//        list = myRepositories!!.androidList
+//        isDataLoaded.postValue(true)
+
+        object : AsyncTask<Void?, Void?, Void?>() {
+            override fun onPreExecute() {
+                super.onPreExecute()
+                isDataLoaded.value = false
+            }
+
+            override fun doInBackground(vararg voids: Void?): Void? {
+
+                return null
+            }
+
+            override fun onPostExecute(aVoid: Void?) {
+                super.onPostExecute(aVoid)
+                try {
+                    Thread.sleep(3000)
+
+                } catch (e: InterruptedException) {
+                    e.printStackTrace()
+                }
+                list = myRepositories!!.androidList
+                isDataLoaded.postValue(true)
+            }
+        }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR)
     }
 
     @SuppressLint("StaticFieldLeak")
-    fun loadData() {
+    fun addNewItems(dataModel: DataModel) {
+
         object : AsyncTask<Void?, Void?, Void?>() {
             override fun onPreExecute() {
                 super.onPreExecute()
@@ -31,7 +66,9 @@ class MyViewModel : ViewModel() {
             override fun doInBackground(vararg voids: Void?): Void? {
                 try {
                     Thread.sleep(4000)
-                    list = myRepositories!!.androidList
+                    val currentList: ArrayList<DataModel>? = list?.value as ArrayList<DataModel>?
+                    currentList?.add(dataModel)
+                    list?.postValue(currentList)
                 } catch (e: InterruptedException) {
                     e.printStackTrace()
                 }

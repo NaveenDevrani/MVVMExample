@@ -4,6 +4,10 @@ import androidx.lifecycle.MutableLiveData
 import com.devcoder.mvvmexample.R.drawable
 import com.devcoder.mvvmexample.utils.Coroutines
 import com.devcoder.mvvmexample2.models.DataModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.util.*
 
 class MyRepositories {
@@ -15,14 +19,10 @@ class MyRepositories {
         get() {
             val data = MutableLiveData<List<DataModel>>()
 
-            Coroutines.main {
-                try {
-                    data.value = setAndroidData()
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                }
-            }
-
+//            GlobalScope.launch {
+//                withContext(Dispatchers.Default) { }
+//            }
+            data.value = setAndroidData()
             return data
         }
 
