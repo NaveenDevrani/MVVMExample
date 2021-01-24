@@ -1,18 +1,14 @@
 package com.devcoder.mvvmexample2.repositories
 
+import android.content.Context
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.MutableLiveData
-import com.devcoder.mvvmexample.R.drawable
-import com.devcoder.mvvmexample.utils.Coroutines
+import com.devcoder.R
 import com.devcoder.mvvmexample2.models.DataModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import java.util.*
 
-class MyRepositories {
-    private val list =
-        ArrayList<DataModel>()
+class MyRepositories(val context: Context) {
+    private val list = ArrayList<DataModel>()
 
     // pretend to get the data from webservice
     val androidList: MutableLiveData<List<DataModel>>
@@ -32,7 +28,7 @@ class MyRepositories {
                 "Oreo",
                 "8.0",
                 "https://picsum.photos/200/300.webp",
-                drawable.oreo
+                ContextCompat.getDrawable(context, R.drawable.oreo)
             )
         )
         list.add(
@@ -40,7 +36,7 @@ class MyRepositories {
                 "Nought",
                 "7.0",
                 "https://picsum.photos/200/300.webp",
-                drawable.nought
+                ContextCompat.getDrawable(context, R.drawable.nought)
             )
         )
         list.add(
@@ -48,7 +44,7 @@ class MyRepositories {
                 "Marshmallow",
                 "6.0",
                 "https://picsum.photos/200/300.webp",
-                drawable.marshmallow
+                ContextCompat.getDrawable(context, R.drawable.marshmallow)
             )
         )
         list.add(
@@ -56,7 +52,7 @@ class MyRepositories {
                 "Lollipop",
                 "5.0",
                 "https://picsum.photos/200/300.webp",
-                drawable.lolipop
+                ContextCompat.getDrawable(context, R.drawable.lolipop)
             )
         )
         list.add(
@@ -64,20 +60,20 @@ class MyRepositories {
                 "Kitkat",
                 "4.0",
                 "https://picsum.photos/200/300.webp",
-                drawable.kitkate
+                ContextCompat.getDrawable(context, R.drawable.kitkate)
             )
         )
         return list
     }
 
     companion object {
-        var instance: MyRepositories? = null
-            get() {
-                if (field == null) {
-                    field = MyRepositories()
-                }
-                return field
+        var field: MyRepositories? = null
+        fun getInstance(context: Context): MyRepositories {
+
+            if (field == null) {
+                field = MyRepositories(context = context)
             }
-            private set
+            return field!!
+        }
     }
 }

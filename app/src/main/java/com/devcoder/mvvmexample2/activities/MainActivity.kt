@@ -3,9 +3,10 @@ package com.devcoder.mvvmexample2.activities
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.devcoder.mvvmexample.R
+import com.devcoder.R
 import com.devcoder.mvvmexample2.adapters.AndroidAdapter
 import com.devcoder.mvvmexample2.models.DataModel
 import com.devcoder.mvvmexample2.viewmodels.MyViewModel
@@ -41,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                     "Oreo",
                     "8.0",
                     "https://picsum.photos/200/300.webp",
-                    R.drawable.oreo
+                    ContextCompat.getDrawable(this, R.drawable.oreo)
                 )
             )
         }

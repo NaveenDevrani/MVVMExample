@@ -1,11 +1,13 @@
 package com.devcoder.mvvmexample2.models;
 
+import android.graphics.drawable.Drawable;
+
 public class DataModel {
 
     private String androidVersion, androidName, imageUrl;
-    private int imageUrlInt;
+    private Drawable imageUrlInt;
 
-    public DataModel(String androidName, String androidVersion, String imageUrl, int imageUrlInt) {
+    public DataModel(String androidName, String androidVersion, String imageUrl, Drawable imageUrlInt) {
 
         this.androidName = androidName;
         this.androidVersion = androidVersion;
@@ -47,11 +49,11 @@ public class DataModel {
 //        view.setImageResource(url);
 //    }
 
-    public int getImageUrlInt() {
+    public Drawable getImageUrlInt() {
         return imageUrlInt;
     }
 
-    public void setImageUrlInt(int imageUrlInt) {
+    public void setImageUrlInt(Drawable imageUrlInt) {
         this.imageUrlInt = imageUrlInt;
     }
 }

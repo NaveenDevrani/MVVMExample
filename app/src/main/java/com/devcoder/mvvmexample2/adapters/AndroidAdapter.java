@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.devcoder.mvvmexample.R;
+import com.devcoder.R;
 import com.devcoder.mvvmexample2.models.DataModel;
 
 import java.util.List;
@@ -36,7 +36,7 @@ public class AndroidAdapter extends RecyclerView.Adapter<AndroidAdapter.ViewHold
         DataModel dataModel = list.get(position);
         holder.tvAndroidName.setText(dataModel.getAndroidName());
         holder.tvAndroidVersion.setText(dataModel.getAndroidVersion());
-        holder.imageView.setImageResource(dataModel.getImageUrlInt());
+        holder.imageView.setImageDrawable(dataModel.getImageUrlInt());
     }
 
     @Override

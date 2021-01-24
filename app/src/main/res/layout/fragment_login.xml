@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.devcoder.mvvmexpectlevel.ui.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="@dimen/_30sdp"
+        android:paddingEnd="@dimen/_30sdp">
+
+        <TextView
+            android:id="@+id/textMVVM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:gravity="center"
+            android:text="MVVM"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_40ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etUsername"
+            style="@style/Edit_Text"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:hint="username"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textMVVM" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            style="@style/Edit_Text"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:hint="password"
+            android:imeOptions="actionNext"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etUsername" />
+
+        <Button
+            android:id="@+id/buttonSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="submit"
+            app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

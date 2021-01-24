@@ -1,6 +1,7 @@
 package com.devcoder.mvvmexample2.viewmodels
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.AsyncTask
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -8,7 +9,7 @@ import androidx.lifecycle.ViewModel
 import com.devcoder.mvvmexample2.models.DataModel
 import com.devcoder.mvvmexample2.repositories.MyRepositories
 
-class MyViewModel : ViewModel() {
+class MyViewModel(val context: Context) : ViewModel() {
     private var list: MutableLiveData<List<DataModel>>? =
         null
     private var myRepositories: MyRepositories? = null
@@ -16,12 +17,13 @@ class MyViewModel : ViewModel() {
 
     fun init() {
         if (list != null) return
-        myRepositories = MyRepositories.instance
+        myRepositories = MyRepositories.getInstance(context = context)
         Thread.sleep(4000)
         list = myRepositories!!.androidList
         isDataLoaded.postValue(true)
-//        loadData()
+
     }
+
     @SuppressLint("StaticFieldLeak")
     fun loadData() {
 //        isDataLoaded.value = false
